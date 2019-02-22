@@ -4,6 +4,10 @@ pipeline {
 			stage('Prepare') {                         
 				steps {                                 
 					echo 'Preparing..'
+					sh '''
+						npm --prefix /Challenge install
+						ls Challenge
+					'''
 				}                 
 			}                 
 			stage('Build') {                         
