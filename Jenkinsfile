@@ -5,8 +5,8 @@ pipeline {
 				steps {                                 
 					echo 'Preparing..'
 					sh '''
+						ls
 						npm --prefix /Challenge install
-						ls Challenge
 					'''
 				}                 
 			}                 
