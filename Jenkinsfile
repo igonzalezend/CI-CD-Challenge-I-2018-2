@@ -14,7 +14,7 @@ pipeline {
 				steps {                                 
 					echo 'Building..'
 					sh '''
-						docker rmi $(docker images |grep 'cicdchallenge')
+						docker rmi $(docker images --format '{{.Repository}}' | grep 'cicdchallenge')
 						docker build -t ${imageTag} .
 					'''
 					sh 'docker image ls'              
