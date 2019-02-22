@@ -4,15 +4,14 @@ pipeline {
 			stage('Prepare') {                         
 				steps {                                 
 					echo 'Preparing..'
-					sh '''
-						ls
-						npm --prefix /Challenge install
-					'''
+					sh  'npm install'
 				}                 
 			}                 
 			stage('Build') {                         
 				steps {                                 
-					echo 'Building..'                         
+					echo 'Building..'
+					sh 'docker build -t challenge .'
+					sh 'docker image ls'              
 				}                 
 			}                 
 			stage('Test') {                         
