@@ -5,14 +5,17 @@ pipeline {
 				steps {                                 
 					echo 'Preparing..'
 					sh  'npm install'
+					script {
+						def imageTag = "cicdchallenge" + env.BUILD_NUMBER;
+					}
 				}                 
 			}                 
 			stage('Build') {                         
 				steps {                                 
 					echo 'Building..'
 					sh '''
-						imageName="challenge$BUILD_NUMBER"
-						docker build -t $imageName .
+						docker rmi $(docker images |grep 'cicdchallenge')
+						docker build -t ${imageTag} .
 					'''
 					sh 'docker image ls'              
 				}                 
@@ -20,13 +23,13 @@ pipeline {
 			stage('Test') {                         
 				steps {                                 
 					echo 'Testing...'
-					sh 'docker run challenge npm test'
+					sh 'docker run ${imageTag} npm test'
 				}                 
 			}
 			stage('push') {
 				steps {
 					echo 'pushing'
-					sh 'docker push igonzalezend/cicdchallenge:$BUILD_NUMBER'
+					sh 'docker push igonzalezend/cicdchallenge:${}'
 				}
 			}                 
 			stage('Deploy') {                         
