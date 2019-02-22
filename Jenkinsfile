@@ -14,8 +14,13 @@ pipeline {
 				steps {                                 
 					echo 'Building..'
 					sh '''
-						
-						docker build -t ${imageTag} .
+						imageCount=$(docker images --format '{{.Repository}}' | grep 'cicdchallenge')
+						if [[ -n imageCount ]]; then
+							echo 'OK'
+						else
+							echo 'DONE'
+						fi
+						docker build --rm -t ${imageTag} .
 					'''
 					sh 'docker image ls'              
 				}                 
