@@ -10,7 +10,10 @@ pipeline {
 			stage('Build') {                         
 				steps {                                 
 					echo 'Building..'
-					sh 'docker build -t challenge-$(BUILD_NUMBER) .'
+					sh '''
+						imageName="challenge$BUILD_NUMBER"
+						docker build -t $imageName .
+					'''
 					sh 'docker image ls'              
 				}                 
 			}                 
@@ -23,7 +26,7 @@ pipeline {
 			stage('push') {
 				steps {
 					echo 'pushing'
-					sh 'docker push igonzalezend/cicdchallenge:$(BUILD_NUMBER)'
+					sh 'docker push igonzalezend/cicdchallenge:$BUILD_NUMBER'
 				}
 			}                 
 			stage('Deploy') {                         
