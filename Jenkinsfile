@@ -1,26 +1,22 @@
 pipeline {
+
+	environment{
+		imageTag = "cicdchallenge" + env.BUILD_NUMBER
+	}
+
 	agent any         
 		stages {                 
 			stage('Prepare') {                         
 				steps {                                 
 					echo 'Preparing..'
 					sh  'npm install'
-					script {
-						def imageTag = "cicdchallenge" + env.BUILD_NUMBER;
-					}
 				}                 
 			}                 
 			stage('Build') {                         
 				steps {                                 
 					echo 'Building..'
-					sh '''
-						imageCount=$(docker images --format '{{.Repository}}' | grep 'cicdchallenge')
-						if [[ -n imageCount ]]; then
-							echo 'OK'
-						else
-							echo 'DONE'
-						fi
-						docker build --rm -t ${imageTag} .
+					sh ''' 
+						docker build -t $imageTag:$BUILD_NUMBER .
 					'''
 					sh 'docker image ls'              
 				}                 
@@ -34,7 +30,7 @@ pipeline {
 			stage('push') {
 				steps {
 					echo 'pushing'
-					sh 'docker push igonzalezend/cicdchallenge:${}'
+					sh 'docker push igonzalezend/cicdchallenge'
 				}
 			}                 
 			stage('Deploy') {                         
