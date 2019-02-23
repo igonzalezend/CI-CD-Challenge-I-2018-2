@@ -1,7 +1,7 @@
 pipeline {
 
 	environment{
-		imageTag = 'cicdchallenge' + ":$BUILD_NUMBER"
+		imageTag = 'igonzalezend/cicdchallenge' + ":$BUILD_NUMBER"
 		credentials = 'dockerhub'
 	}
 
