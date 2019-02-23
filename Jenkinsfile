@@ -1,7 +1,7 @@
 pipeline {
 
 	environment{
-		imageTag = "cicdchallenge" + env.BUILD_NUMBER
+		imageTag = 'cicdchallenge' + ":$BUILD_NUMBER"
 	}
 
 	agent any         
