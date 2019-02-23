@@ -15,9 +15,11 @@ pipeline {
 			stage('Build') {                         
 				steps {                                 
 					echo 'Building..'
-					sh ''' 
-						docker build -t '$imageTag:$BUILD_NUMBER' .
-					'''
+
+					script {
+						dockerImage = docker.build imageTag
+					}
+
 					sh 'docker image ls'              
 				}                 
 			}                 
