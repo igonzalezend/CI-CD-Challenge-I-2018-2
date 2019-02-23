@@ -16,7 +16,7 @@ pipeline {
 				steps {                                 
 					echo 'Building..'
 					sh ''' 
-						docker build -t $imageTag:$BUILD_NUMBER .
+						docker build -t '$imageTag:$BUILD_NUMBER' .
 					'''
 					sh 'docker image ls'              
 				}                 
