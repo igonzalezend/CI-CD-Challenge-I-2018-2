@@ -2,6 +2,7 @@ pipeline {
 
 	environment{
 		imageTag = 'cicdchallenge' + ":$BUILD_NUMBER"
+		credentials = 'dockerhub'
 	}
 
 	agent any         
@@ -18,21 +19,28 @@ pipeline {
 
 					script {
 						dockerImage = docker.build imageTag
-					}
-
-					sh 'docker image ls'              
+					}             
 				}                 
 			}                 
 			stage('Test') {                         
 				steps {                                 
 					echo 'Testing...'
-					sh 'docker run ${imageTag} npm test'
+					script{
+						dockerImage.inside {
+							sh 'npm test'
+						}
+					}
 				}                 
 			}
 			stage('push') {
 				steps {
 					echo 'pushing'
-					sh 'docker push igonzalezend/cicdchallenge'
+					script {
+						docker.withRegistry('', credentials){
+							dockerImage.push()
+						}
+					}
+					sh 'docker rmi -f $imageTag'
 				}
 			}                 
 			stage('Deploy') {                         
