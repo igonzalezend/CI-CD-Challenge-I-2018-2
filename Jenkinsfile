@@ -45,7 +45,14 @@ pipeline {
 			}                 
 			stage('Deploy') {                         
 				steps {                                 
-					echo 'Deploying....'                                     					
+					echo 'Deploying....'
+					sh 'docker rmi $(docker images -q)'
+					script {
+						docker.withRegistry('', credentials){
+							sh 'docker pull $imageTag'
+						}
+					}
+					sh 'docker images'                                    					
 				}                 
 			}         
 		} 
