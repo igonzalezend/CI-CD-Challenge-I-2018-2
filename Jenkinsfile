@@ -52,7 +52,7 @@ pipeline {
 							sh 'docker pull $imageTag'
 						}
 					}
-					sh 'docker run --rm $imageTag'                                    					
+					sh 'docker run --rm -p 8000:8000 $imageTag'                                    					
 				}                 
 			}         
 		} 
