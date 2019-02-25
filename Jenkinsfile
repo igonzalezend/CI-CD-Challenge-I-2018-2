@@ -1,7 +1,8 @@
 pipeline {
 
 	environment{
-		imageTag = 'igonzalezend/cicdchallenge' + ":$BUILD_NUMBER"
+		imageName = 'igonzalezend/cicdchallenge'
+		imageTag = imageName + ":$BUILD_NUMBER"
 		credentials = 'dockerhub'
 	}
 
@@ -47,7 +48,7 @@ pipeline {
 				steps {                                 
 					echo 'Deploying....'
 					input("Deploy the image?")
-					sh 'docker stop $imageTag'
+					sh 'docker stop $imageName'
 					sh 'docker rmi --force $(docker images -q)'
 					script {
 						docker.withRegistry('', credentials){
