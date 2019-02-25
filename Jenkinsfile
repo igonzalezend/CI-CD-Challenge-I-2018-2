@@ -2,12 +2,12 @@ pipeline {
 
 	environment{
 		imageName = 'igonzalezend/cicdchallenge'
-		imageTag = imageName + ":$BUILD_NUMBER"
+		imageTag = 'igonzalezend/cicdchallenge' + ":$BUILD_NUMBER"
 		credentials = 'dockerhub'
 	}
 
 	agent any    
-	     
+
 	stages {                 
 		stage('Prepare') {                         
 			steps {                                 
