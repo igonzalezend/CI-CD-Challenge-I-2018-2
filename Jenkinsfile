@@ -56,7 +56,7 @@ pipeline {
 				}
 				sh 'docker rm -f $(docker ps -a -q)'
 				sh 'docker run -d -p 8000:8000 $imageTag'
-				sh 'docker image prune -f'                                    					
+				sh 'docker image prune -f -a'                                    					
 			}                 
 		}         
 	} 
