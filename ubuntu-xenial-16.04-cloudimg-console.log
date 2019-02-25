@@ -674,3 +674,95 @@ ubuntu-xenial login: [[0;32m  OK  [0m] Started ACPI event daemon.
 [  OK  ] Started Snappy daemon.
 [  OK  ] Listening on Socket activation for snappy daemon.
 [  OK  ] Started Daily apt upgrade and clean activities.
+[ 7174.370933] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 7174.370933]   Tx Queue             <0>
+[ 7174.370933]   TDH                  <13>
+[ 7174.370933]   TDT                  <16>
+[ 7174.370933]   next_to_use          <16>
+[ 7174.370933]   next_to_clean        <13>
+[ 7174.370933] buffer_info[next_to_clean]
+[ 7174.370933]   time_stamp           <1001a0b6c>
+[ 7174.370933]   next_to_watch        <15>
+[ 7174.370933]   jiffies              <1001a0d67>
+[ 7174.370933]   next_to_watch.status <0>
+[ 7176.377750] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 7176.377750]   Tx Queue             <0>
+[ 7176.377750]   TDH                  <13>
+[ 7176.377750]   TDT                  <16>
+[ 7176.377750]   next_to_use          <16>
+[ 7176.377750]   next_to_clean        <13>
+[ 7176.377750] buffer_info[next_to_clean]
+[ 7176.377750]   time_stamp           <1001a0b6c>
+[ 7176.377750]   next_to_watch        <15>
+[ 7176.377750]   jiffies              <1001a0f5d>
+[ 7176.377750]   next_to_watch.status <0>
+[ 7178.390784] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 7178.390784]   Tx Queue             <0>
+[ 7178.390784]   TDH                  <13>
+[ 7178.390784]   TDT                  <16>
+[ 7178.390784]   next_to_use          <16>
+[ 7178.390784]   next_to_clean        <13>
+[ 7178.390784] buffer_info[next_to_clean]
+[ 7178.390784]   time_stamp           <1001a0b6c>
+[ 7178.390784]   next_to_watch        <15>
+[ 7178.390784]   jiffies              <1001a1154>
+[ 7178.390784]   next_to_watch.status <0>
+[ 7179.812669] e1000 0000:00:03.0 enp0s3: Reset adapter
+[ 8015.855629] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[ 8015.855629]   Tx Queue             <0>
+[ 8015.855629]   TDH                  <ed>
+[ 8015.855629]   TDT                  <f0>
+[ 8015.855629]   next_to_use          <f0>
+[ 8015.855629]   next_to_clean        <ed>
+[ 8015.855629] buffer_info[next_to_clean]
+[ 8015.855629]   time_stamp           <1001d3fbc>
+[ 8015.855629]   next_to_watch        <ef>
+[ 8015.855629]   jiffies              <1001d432a>
+[ 8015.855629]   next_to_watch.status <0>
+[ 8017.717746] e1000 0000:00:03.0 enp0s3: Reset adapter
+[10062.333617] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[10062.333617]   Tx Queue             <0>
+[10062.333617]   TDH                  <f0>
+[10062.333617]   TDT                  <f3>
+[10062.333617]   next_to_use          <f3>
+[10062.333617]   next_to_clean        <f0>
+[10062.333617] buffer_info[next_to_clean]
+[10062.333617]   time_stamp           <100250ee0>
+[10062.333617]   next_to_watch        <f2>
+[10062.333617]   jiffies              <1002511ae>
+[10062.333617]   next_to_watch.status <0>
+[10064.709368] e1000 0000:00:03.0 enp0s3: Reset adapter
+[10315.473945] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[10315.473945]   Tx Queue             <0>
+[10315.473945]   TDH                  <c3>
+[10315.473945]   TDT                  <c7>
+[10315.473945]   next_to_use          <c7>
+[10315.473945]   next_to_clean        <c3>
+[10315.473945] buffer_info[next_to_clean]
+[10315.473945]   time_stamp           <1002605f2>
+[10315.473945]   next_to_watch        <c6>
+[10315.473945]   jiffies              <1002608e3>
+[10315.473945]   next_to_watch.status <0>
+[10318.532403] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[10318.532403]   Tx Queue             <0>
+[10318.532403]   TDH                  <c3>
+[10318.532403]   TDT                  <c7>
+[10318.532403]   next_to_use          <c7>
+[10318.532403]   next_to_clean        <c3>
+[10318.532403] buffer_info[next_to_clean]
+[10318.532403]   time_stamp           <1002605f2>
+[10318.532403]   next_to_watch        <c6>
+[10318.532403]   jiffies              <100260bdf>
+[10318.532403]   next_to_watch.status <0>
+[10320.814029] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[10320.814029]   Tx Queue             <0>
+[10320.814029]   TDH                  <c3>
+[10320.814029]   TDT                  <c7>
+[10320.814029]   next_to_use          <c7>
+[10320.814029]   next_to_clean        <c3>
+[10320.814029] buffer_info[next_to_clean]
+[10320.814029]   time_stamp           <1002605f2>
+[10320.814029]   next_to_watch        <c6>
+[10320.814029]   jiffies              <100260e1a>
+[10320.814029]   next_to_watch.status <0>
+[10321.850957] e1000 0000:00:03.0 enp0s3: Reset adapter
