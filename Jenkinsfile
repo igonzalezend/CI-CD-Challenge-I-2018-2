@@ -49,7 +49,7 @@ pipeline {
 			steps {                                 
 				echo 'Deploying....'
 				input("Deploy the image?")
-				sh 'docker rm --force $(docker images -q)'
+				sh 'docker rm --force $(docker ps -q)'
 				sh 'docker rmi --force $(docker images -q)'
 				script {
 					docker.withRegistry('', credentials){
