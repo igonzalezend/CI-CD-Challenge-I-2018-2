@@ -49,7 +49,6 @@ pipeline {
 			steps {                                 
 				echo 'Deploying....'
 				input("Deploy the image?")
-				sh 'docker stop $(docker ps -a -q)'
 				sh 'docker rmi --force $(docker images -q)'
 				script {
 					docker.withRegistry('', credentials){
