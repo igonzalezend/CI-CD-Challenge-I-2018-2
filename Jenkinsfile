@@ -49,8 +49,7 @@ pipeline {
 			steps {                                 
 				echo 'Deploying....'
 				input("Deploy the image?")
-				sh 'docker stop $imageName'
-				sh 'docker rmi --force $(docker images -q)'
+				sh 'docker stop $(docker ps -a -q)'
 				script {
 					docker.withRegistry('', credentials){
 						sh 'docker pull $imageTag'
