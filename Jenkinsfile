@@ -54,7 +54,8 @@ pipeline {
 						sh 'docker pull $imageTag'
 					}
 				}
-				sh 'docker run --rm -d -p 8000:8000 $imageTag'
+				sh 'docker rm $(docker ps -a -q)'
+				sh 'docker run -d -p 8000:8000 $imageTag'
 				sh 'docker image prune -f'                                    					
 			}                 
 		}         
